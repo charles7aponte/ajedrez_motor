@@ -56,7 +56,7 @@
 
 
                             fwrite($pipes[0], "setoption name Skill Level value ".$_SESSION['level']."\n");    // send start
-                            fwrite($pipes[0], "setoption name Contempt  value ".$_SESSION['content']."\n");    // send start
+                            fwrite($pipes[0], "setoption name MultiPV  value ".$_SESSION['multipv']."\n");    // send start
                             fwrite($pipes[0], "setoption name Threads value ".$_SESSION['thread']."\n");    // send start
                             fwrite($pipes[0], "setoption name Aggressiveness value ".$_SESSION['agre']."\n");    // send start
                             fwrite($pipes[0], "setoption name Best Book Move value ".$_SESSION['book']."\n");    // send start
@@ -102,7 +102,7 @@
                             else {
 
                                 // SOLICITA EL MEJOR MOVIENTO AL MOTOR
-                                fwrite($pipes[0], "go movetime 1000 mate\n");    // la mejor opcion                 
+                                fwrite($pipes[0], "go movetime ".$_SESSION['time']." mate\n");    // la mejor opcion                 
 
                                 ///busca en un maximo de 1000
                                 $contador=0;

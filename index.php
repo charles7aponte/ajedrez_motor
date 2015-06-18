@@ -53,11 +53,12 @@
                   $_SESSION['moves_ant']="";
                   $_SESSION['fen']="";
 
-                  $_SESSION['content']=$_REQUEST['content'];
+                  $_SESSION['multipv']=$_REQUEST['multipv'];
 
                    $_SESSION['thread']=$_REQUEST['thread'];
                    $_SESSION['agre']=$_REQUEST['agre'];
                    $_SESSION['book']=$_REQUEST['book'];
+                   $_SESSION['time']=$_REQUEST['time'];
 
 				  $valor_level="40";
 				  if(isset($_REQUEST['level']))
@@ -100,11 +101,12 @@
         }
         else {
             echo "<form method='get' action='index.php'> " ;
-			echo "Content <input type='number' value='0' name='content'> , rango -100 a 100 <br>";
+			echo "multipv <input type='number' value='1' name='multipv'> , rango 1 a 500 <br>";
             echo "Thread : <input type='number' value='1' name='thread'> rango  1 - 128 <br>";
             echo "Agres : <input type='number' value='100' name='agre'> rango  0 - 200 <br>";
-            echo "Best book  <select name='book'> <option value='false' selected>false</option><option value='true' selected>true</option></select>";
-            echo "Level <input type='number' value='10' name='level'> rango 0 a 40<br>";
+            echo "Best book  <select name='book'> <option value='false' selected>false</option><option value='true' >true</option></select><br>";
+            echo "*Level <input type='number' value='10' name='level'> rango 0 a 40<br>";
+            echo "*time move  <input type='number' value='1000' name='time'> rango 1 a Infinito <br>";
             
             echo "<input value='inicio' type='submit'><input type='hidden' value='iniciar' name='accion'>";
             echo "</form>";
